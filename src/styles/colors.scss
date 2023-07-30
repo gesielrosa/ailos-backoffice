@@ -1,0 +1,59 @@
+:root {
+  --color-primary: #165c7d;
+  --color-primary-tint: #013f5c;
+  --color-primary-shade: #012f44;
+  --color-primary-contrast: #ffffff;
+  --color-primary-rgb: 22, 92, 125;
+
+  --color-secondary: #ffa300;
+  --color-secondary-tint: #ffb533;
+  --color-secondary-shade: #c37d00;
+  --color-secondary-contrast: #ffffff;
+  --color-secondary-rgb: 255, 163, 0;
+
+  --color-danger: #c13018;
+
+  --color-success: #00c246;
+
+  --color-warning: #ffa300;
+
+  --color-dark: #040f14;
+
+  --color-background: #e8eff2;
+
+  --color-grey-400: #889499;
+  --color-grey-300: #a7b0b5;
+  --color-grey-200: #c6ced1;
+  --color-grey-100: #e7eef1;
+
+  --color-ailos-green: #00c246;
+  --color-ailos-blue: #009ed0;
+  --color-ailos-blue-medium: #007d8a;
+  --color-ailos-blue-dark: #165c7d;
+  --color-ailos-blue-dark-60: #739db1;
+  --color-ailos-blue-dark-120: #013f5c;
+}
+
+.color-primary {
+  color: var(--color-primary) !important;
+}
+
+.color-secondary {
+  color: var(--color-secondary) !important;
+}
+
+.color-dark {
+  color: var(--color-dark) !important;
+}
+
+.color-warning {
+  color: var(--color-warning) !important;
+}
+
+.color-success {
+  color: var(--color-success) !important;
+}
+
+.color-grey-400 {
+  color: var(--color-grey-400) !important;
+}

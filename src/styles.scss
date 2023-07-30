@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+
+@import 'styles/colors';
+@import 'styles/typo';
+
+body,
+html {
+  display: block;
+  background-color: var(--color-background);
+  color: var(--color-dark);
+  height: 100%;
+}
