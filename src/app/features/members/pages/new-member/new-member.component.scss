@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  height: 100%;
+
+  .card-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+
+      app-icon {
+        color: var(--color-grey-400);
+        font-size: 32px;
+      }
+    }
+
+    &-label {
+      color: var(--color-grey-400);
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    &-value {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+}
