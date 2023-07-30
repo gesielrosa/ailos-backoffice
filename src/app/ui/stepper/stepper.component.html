@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <ng-container *ngFor="let step of steps; let first = first; let last = last; let index = index">
+    <div
+      class="step"
+      [class.step--first]="first"
+      [class.step--last]="last"
+      [class.step--active]="index === currentStep"
+      [class.step--done]="currentStep > index">
+      <span class="bubble"></span>
+      <span class="label">{{ step.label }}</span>
+    </div>
+  </ng-container>
+</div>

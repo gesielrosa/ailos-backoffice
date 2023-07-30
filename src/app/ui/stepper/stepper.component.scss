@@ -1,0 +1,76 @@
+:host {
+  display: block;
+  height: 112px;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    min-width: 140px;
+    padding: 0 7.5px;
+
+    .bubble {
+      display: block;
+      height: 18px;
+      width: 18px;
+      background-color: var(--color-grey-200);
+      border-radius: 50%;
+      margin-bottom: 14px;
+      border: 2px solid transparent;
+      z-index: 2;
+    }
+
+    .label {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      color: var(--color-grey-400);
+    }
+
+    &:before {
+      top: 8px;
+      position: absolute;
+      content: '';
+      height: 2px;
+      width: 100%;
+      background-color: var(--color-grey-200);
+      z-index: 1;
+    }
+
+    &--first {
+      &:before {
+        left: 50%;
+        width: 50%;
+      }
+    }
+
+    &--last {
+      &:before {
+        right: 50%;
+        width: 50%;
+      }
+    }
+
+    &--active {
+      .bubble {
+        border: 2px solid var(--color-primary);
+        background-color: var(--color-background);
+      }
+    }
+
+    &--done {
+      .bubble {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}
