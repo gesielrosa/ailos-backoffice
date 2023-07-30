@@ -1,0 +1,15 @@
+<div class="row g-0 h-100 w-100">
+  <div class="col-auto">
+    <ng-content select="[slot=menu]"></ng-content>
+  </div>
+  <div class="col">
+    <div class="d-flex flex-column h-100">
+      <div>
+        <ng-content select="[slot=header]"></ng-content>
+      </div>
+      <div class="flex-grow-1">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>
