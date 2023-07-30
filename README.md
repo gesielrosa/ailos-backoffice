@@ -1,27 +1,57 @@
-# AilosBackoffice
+# AILOS Backoffice
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
+[DEMO](https://ailos-backoffice.netlify.app/)
 
-## Development server
+## Requisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular CLI >= 16
+- Node >= 18
+- NPM >= 9
 
-## Code scaffolding
+## Pacotes de terceiros utilizados
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Bootstrap 5
+- ngx-mask 16
 
-## Build
+## Iniciar um servidor local
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Abra um terminal na raiz do projeto e execute o comando:
 
-## Running unit tests
+```bash
+npm run start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> A aplicação ficará disponível no endereço `http://localhost:4200/`
 
-## Running end-to-end tests
+## Compilar para distribuição
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Abra um terminal na raiz do projeto e execute o comando:
 
-## Further help
+```bash
+npm run build
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+> Os arquivos da aplicação ficarão disponíveis na pasta `dist/ailos-backoffice`
+
+## Instruções para testar as funcionalidades descritas no desafio
+
+Página demo: https://ailos-backoffice.netlify.app/
+
+Pode-se utilizar os seguintes CPFs para fazer os devidos testes:
+
+- 30907589030
+- 07130736089
+- 47682789069
+
+> São todos dados fictícios
+
+## Observações gerais
+
+- Os ícones utilizados na aplicação foram retirados do Google Fonts, pois o Figma disponibilizado para o desafio não permite exportar assets;
+- Alguns dos componentes não foram criados com todas as funcionalidades previstas no Alpaca Design System pois não faziam sentido para o desafio (ex.: Menu lateral abrir, stepper com navegação funcional e etc);
+- Não foi utilizado nenhuma API externa para consulta dos dados do desafio, apenas foi implementado um Interceptor para simular a consulta em uma API;
+- Não foi dado muita atenção para a compatibilidade do layout com dispositivos móveis (responsividade);
+
+## Autor
+
+Gesiel Rosa - me@gesiel.com
