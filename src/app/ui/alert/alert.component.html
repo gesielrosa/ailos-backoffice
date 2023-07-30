@@ -1,0 +1,14 @@
+<div class="icon">
+  <app-icon iconStyle="outlined" class="color-warning">report_problem</app-icon>
+</div>
+<div class="flex-grow-1">
+  <div class="title">
+    <ng-content select="[slot=title]"></ng-content>
+  </div>
+  <div class="text">
+    <ng-content select="[slot=text]"></ng-content>
+  </div>
+</div>
+<div class="close-btn">
+  <app-icon iconStyle="outlined" class="color-warning" (click)="close.emit()">close</app-icon>
+</div>
