@@ -1,8 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import {Step} from './step';
-
 @Component({
   selector: 'app-stepper',
   standalone: true,
@@ -11,7 +9,7 @@ import {Step} from './step';
   styleUrls: ['./stepper.component.scss'],
 })
 export class StepperComponent {
-  @Input() steps: Step[] = [];
+  @Input() steps: string[] = [];
 
   @Input() currentStep: number = 0;
 
