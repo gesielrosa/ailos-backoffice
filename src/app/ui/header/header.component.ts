@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {map} from 'rxjs';
 
 import {IconComponent} from '../icon/icon.component';
 import {AvatarComponent} from '../avatar/avatar.component';
