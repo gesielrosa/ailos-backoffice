@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #ffffff;
+
+  .title {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+
+    &-container {
+      flex: 1;
+    }
+  }
+
+  .breadcrumbs {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-grey-400);
+
+    a {
+      color: var(--color-grey-400);
+      text-decoration: none;
+    }
+  }
+}

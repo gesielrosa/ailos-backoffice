@@ -1,0 +1,24 @@
+<div class="title-container">
+  <div class="title">
+    {{ title$ | async }}
+  </div>
+  <div class="breadcrumbs">
+    <ng-container *ngFor="let item of breadcrumbs$ | async; let last = last">
+      <a href="#">
+        {{ item }}
+      </a>
+      <span *ngIf="!last"> / </span>
+    </ng-container>
+  </div>
+</div>
+<div class="notifications">
+  <button app-button fill="clean" edge="rounded" [iconOnly]="true">
+    <app-icon iconStyle="outlined">notifications</app-icon>
+  </button>
+</div>
+<div class="selector">
+  <button app-button fill="outlined" edge="rounded">VIACRED</button>
+</div>
+<div class="avatar">
+  <app-avatar image="assets/images/avatar-example.png"></app-avatar>
+</div>
