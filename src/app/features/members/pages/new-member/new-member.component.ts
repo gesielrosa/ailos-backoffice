@@ -7,7 +7,6 @@ import {PageContentComponent} from '../../../../ui/page-content/page-content.com
 import {HeaderComponent} from '../../../../ui/header/header.component';
 import {GrButtonComponent} from '../../../../ui/button/button.component';
 import {StepperComponent} from '../../../../ui/stepper/stepper.component';
-import {Step} from '../../../../ui/stepper/step';
 import {FormControlComponent} from '../../../../ui/form-control/form-control.component';
 import {cpfValidator} from '../../../../shared/validators/cpf.validator';
 import {CardComponent} from '../../../../ui/card/card.component';
@@ -43,20 +42,9 @@ export class NewMemberComponent {
     cpf: ['', [Validators.required, cpfValidator()]],
   });
 
-  public steps: Step[] = [
-    {
-      label: 'Início',
-    },
-    {
-      label: 'Documentos',
-    },
-    {
-      label: 'Dados cadastrais',
-    },
-    {
-      label: 'Admissão',
-    },
-  ];
+  public steps: string[] = ['Início', 'Documentos', 'Dados cadastrais', 'Admissão'];
+
+  public breadcrumbs: string[] = ['Cadastro', 'Admissão do Cooperado', 'Nova Admissão de Cooperado'];
 
   public member: Member | undefined;
 
@@ -80,12 +68,16 @@ export class NewMemberComponent {
           };
         }
 
-        this.member = undefined;
+        this.clearMember();
       },
     });
   }
 
   public clearAlert(): void {
     this.alertError = undefined;
+  }
+
+  public clearMember(): void {
+    this.member = undefined;
   }
 }

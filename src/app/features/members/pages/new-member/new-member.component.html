@@ -1,15 +1,15 @@
-<app-page-content
-  headerTitle="Nova admissão cooperado"
-  [headerBreadcrumbs]="['Cadastro', 'Admissão do Cooperado', 'Nova Admissão de Cooperado']">
+<app-page-content headerTitle="Nova admissão cooperado" [headerBreadcrumbs]="breadcrumbs">
   <app-stepper [steps]="steps"></app-stepper>
-  <app-alert class="mb-4" *ngIf="alertError" (close)="clearAlert()">
-    <span slot="title">{{ alertError.title }}</span>
-    <span slot="text">{{ alertError.text }}</span>
-  </app-alert>
+  <ng-container *ngIf="alertError">
+    <app-alert class="mb-4" (close)="clearAlert()">
+      <span slot="title">{{ alertError.title }}</span>
+      <span slot="text">{{ alertError.text }}</span>
+    </app-alert>
+  </ng-container>
   <div class="page-title">Informe o CPF do futuro cooperado (a)</div>
   <p class="page-subtitle">
-    Se necessário, você poderá duplicar uma conta existente ou pausar e retomar este cadastro futuramente. Digite apenas
-    os números (sem pontos ou traços).
+    Se necessário, você poderá duplicar uma conta existente ou pausar e retomar este cadastro futuramente.
+    Digite apenas os números (sem pontos ou traços).
   </p>
   <form [formGroup]="form" (ngSubmit)="onSubmit()" class="mb-5">
     <div class="row align-items-end">
@@ -27,63 +27,67 @@
         </app-form-control>
       </div>
       <div class="col-12 col-md-auto">
-        <button type="submit" app-button [disabled]="form.invalid">Consultar CPF</button>
+        <button type="submit" app-button [disabled]="form.invalid">Consultar por CPF</button>
       </div>
     </div>
   </form>
-  <div class="row" *ngIf="member">
-    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-md-0">
-      <app-card>
-        <span slot="title">Situação cadastral do CPF</span>
-        <span slot="subtitle">Consulta na Receita Federal</span>
-        <div class="card-info">
-          <div class="card-info-icon">
-            <app-icon iconStyle="outlined">person</app-icon>
-          </div>
-          <div class="card-info-content">
-            <div class="card-info-label">Nome</div>
-            <div class="card-info-value">{{ member.name }}</div>
-          </div>
-        </div>
-        <div class="card-info mb-0">
-          <div class="card-info-icon">
-            <app-icon iconStyle="outlined" class="color-success" *ngIf="member.doc_status === 'regular'">
-              check_circle
-            </app-icon>
-            <app-icon iconStyle="outlined" class="color-warning" *ngIf="member.doc_status === 'irregular'">
-              error_outline
-            </app-icon>
-          </div>
-          <div class="card-info-content">
-            <div class="card-info-label">Situação do CPF</div>
-            <div class="card-info-value">{{ member.doc_status | docStatusText }}</div>
-          </div>
-        </div>
-      </app-card>
-    </div>
-    <ng-container *ngFor="let account of member.accounts">
+  <ng-container *ngIf="member">
+    <div class="row">
       <div class="col-12 col-md-6 col-lg-3 mb-4 mb-md-0">
         <app-card>
-          <span slot="title">{{ account.name }}</span>
-          <span slot="subtitle">{{ account.office }}</span>
+          <span slot="title">Situação cadastral do CPF</span>
+          <span slot="subtitle">Consulta na Receita Federal</span>
           <div class="card-info">
             <div class="card-info-icon">
-              <app-icon iconStyle="outlined">credit_card</app-icon>
+              <app-icon iconStyle="outlined">person</app-icon>
             </div>
             <div class="card-info-content">
-              <div class="card-info-label">Número da conta</div>
-              <div class="card-info-value">{{ account.number }}</div>
+              <div class="card-info-label">Nome</div>
+              <div class="card-info-value">{{ member.name }}</div>
             </div>
           </div>
-          <button app-button fill="clean" class="px-0">Duplicar conta</button>
+          <div class="card-info mb-0">
+            <div class="card-info-icon">
+              <app-icon iconStyle="outlined" class="color-success" *ngIf="member.doc_status === 'regular'">
+                check_circle
+              </app-icon>
+              <app-icon iconStyle="outlined" class="color-warning" *ngIf="member.doc_status === 'irregular'">
+                error_outline
+              </app-icon>
+            </div>
+            <div class="card-info-content">
+              <div class="card-info-label">Situação do CPF</div>
+              <div class="card-info-value">{{ member.doc_status | docStatusText }}</div>
+            </div>
+          </div>
         </app-card>
       </div>
-    </ng-container>
-  </div>
+      <ng-container *ngFor="let account of member.accounts">
+        <div class="col-12 col-md-6 col-lg-3 mb-4 mb-md-0">
+          <app-card>
+            <span slot="title">{{ account.name }}</span>
+            <span slot="subtitle">{{ account.office }}</span>
+            <div class="card-info">
+              <div class="card-info-icon">
+                <app-icon iconStyle="outlined">credit_card</app-icon>
+              </div>
+              <div class="card-info-content">
+                <div class="card-info-label">Número da conta</div>
+                <div class="card-info-value">{{ account.number }}</div>
+              </div>
+            </div>
+            <button app-button fill="clean" class="px-0">Duplicar conta</button>
+          </app-card>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
   <div slot="footer" class="d-flex gap-3">
-    <button app-button size="m" *ngIf="member" [disabled]="member.doc_status === 'irregular'">
-      Iniciar nova admissão
-    </button>
+    <ng-container *ngIf="member">
+      <button app-button size="m" [disabled]="member.doc_status === 'irregular'">
+        Iniciar nova admissão
+      </button>
+    </ng-container>
     <button app-button size="m" fill="outlined">Dicas para admissão</button>
   </div>
 </app-page-content>
